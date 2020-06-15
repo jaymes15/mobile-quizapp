@@ -29,7 +29,7 @@ class _splashscreenState extends State<splashscreen> {
           "QuizStar",
           style: TextStyle(
             fontSize: 50.0,
-            color: Colors.white;
+            color: Colors.white,
           ),
         ),
       ),

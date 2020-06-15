@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'quizpage.dart';
 
 
 
@@ -8,14 +9,24 @@ class home extends StatefulWidget {
 }
 
 class _homeState extends State<home> {
+List<String> images = [
+                        "assets/images/download.jpg",
+                        "assets/images/download2.png",
+                        "assets/images/js.png",
+                        "assets/images/csharp.png",
 
-  Widget customcard(String lanname){
+                      ];
+  Widget customcard(String lanname, String images){
     return Padding(
       padding : EdgeInsets.all(
         20.0,
       ),
       child: InkWell(
-
+        onTap: (){
+          Navigator.of(context).pushReplacement(MaterialPageRoute(
+          builder: (context) => getjson(),
+          ));
+        },
         child: Material(
           elevation: 10.0,
           color: Colors.indigoAccent,
@@ -35,8 +46,9 @@ class _homeState extends State<home> {
                       width:200.0,
                       child: ClipOval(
                         child: Image(
+                          fit: BoxFit.cover,
                           image: AssetImage(
-                            "assset/"
+                            images,
                           ),
                         )
                       )
@@ -87,11 +99,11 @@ class _homeState extends State<home> {
       ),
       body: ListView(
         children: <Widget>[
-          customcard("Python"),
-          customcard("Java"),
-          customcard("Javascript"),
-          customcard("C#"),
-          customcard(),
+          customcard("Python", images[0]),
+          customcard("Java",images[1]),
+          customcard("Javascript",images[2]),
+          customcard("C#", images[3]),
+
         ],
       ),
     );
