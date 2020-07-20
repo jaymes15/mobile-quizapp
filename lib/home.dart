@@ -25,7 +25,7 @@ List<String> images = [
       child: InkWell(
         onTap: (){
           Navigator.of(context).pushReplacement(MaterialPageRoute(
-          builder: (context) => getjson(),
+          builder: (context) => getjson(lanname : lanname),
           ));
         },
         child: Material(
@@ -104,10 +104,10 @@ List<String> images = [
       ),
       body: ListView(
         children: <Widget>[
-          customcard("Python", images[0]),
-          customcard("Java",images[1]),
-          customcard("Javascript",images[2]),
-          customcard("C#", images[3]),
+          customcard("python", images[0]),
+          customcard("java",images[1]),
+          customcard("javascript",images[2]),
+          customcard("c++", images[3]),
 
         ],
       ),
